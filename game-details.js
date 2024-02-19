@@ -24,3 +24,19 @@ document.addEventListener("DOMContentLoaded", function() {
         console.error('Game ID not found in URL parameter.');
     }
 });
+
+//! Dark Mode Toggle Functionality
+const darkModeToggle = document.getElementById("darkModeToggle");
+darkModeToggle.addEventListener("change", () => {
+    const bootstrapThemeLink = document.getElementById("bootstrap-theme");
+    const customDarkThemeLink = document.getElementById("custom-dark-theme");
+    if (darkModeToggle.checked) {
+        
+        bootstrapThemeLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.dark.min.css";
+        customDarkThemeLink.disabled = false;
+    } else {
+        
+        bootstrapThemeLink.href = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css";
+        customDarkThemeLink.disabled = true;
+    }
+});
