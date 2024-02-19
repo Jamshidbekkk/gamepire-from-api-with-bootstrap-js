@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link id="bootstrap-theme" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.dark.min.css" rel="stylesheet">
+    <!-- Custom CSS for Dark Mode -->
+    <link id="custom-dark-theme" href="dark-theme.css" rel="stylesheet">
+</head>
+<body>
+
+     <!-- NAVBAR START -->
+     <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="/index.html">
+                <img src="/img/gamepire.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+                GamePire
+            </a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-dark" type="submit" >Search</button>
+            </form>
+            <div class="form-check form-switch ms-3">
+                <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                <label class="form-check-label text-dark" for="darkModeToggle">Dark Mode</label>
+            </div>
+        </div>
+    </nav>
+     <!-- NAVBAR END -->
+
+
+
+
+    <!-- MAIN CONTENT START -->
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div id="gameDetails">
+                    <!-- Game details  -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- MAIN CONTENT END -->
+
+    <script src="game-details.js"></script>
+</body>
+</html>
