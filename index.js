@@ -23,3 +23,14 @@ const fetchGames = () => {
     });
 }
 fetchGames();
+
+//! Function to check if the user has scrolled to the bottom of the page
+const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    const clientHeight = document.documentElement.clientHeight;
+    if (scrollTop + clientHeight >= scrollHeight - 100) {
+        fetchGames(); 
+    }
+};
+window.addEventListener("scroll", handleScroll);
