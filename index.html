@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Website</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link id="bootstrap-theme" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.dark.min.css" rel="stylesheet">
+    <!-- Custom CSS for Dark Mode -->
+    <link id="custom-dark-theme" href="dark-theme.css" rel="stylesheet">
+
+    <style>
+        .list-group-item.cursor-pointer:hover,
+        .card-title {
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+    
+    <!-- NAVBAR START -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="/img/gamepire.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top me-2">
+                GamePire
+            </a>
+            <form class="d-flex ms-auto">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchInput">
+                <button class="btn btn-outline-dark" type="submit" onclick="searchGames()">Search</button>
+            </form>
+            <div class="form-check form-switch ms-3">
+                <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                <label class="form-check-label text-dark" for="darkModeToggle">Dark Mode</label>
+            </div>
+        </div>
+    </nav>
+    <!-- NAVBAR END -->
+    
+    <!-- SIDEBAR GENRES START -->
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <div class="col-md-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Genres</h5>
+                        <ul class="list-group" >
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('action')">Action</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('indie')">Indie</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('adventure')">Adventure</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('RPG')">RPG</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('strategy')">Strategy</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('shooter')">Shooter</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('casual')">Casual</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('simulation')">Simulation</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('puzzle')">Puzzle</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('arcade')">Arcade</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('platformer')">Platformer</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('massively multiplayer')">Massively Multiplayer</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('racing')">Racing</li> 
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('sports')">Sports</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('fighting')">Fighting</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('family')">Family</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('board games')">Board Games</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('educational')">Educational</li>
+                            <li class="list-group-item cursor-pointer" onclick="filterByGenre('card')">Card</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    <!-- SIDEBAR GENRES END -->
+        
+            
+            <!-- MAIN CONTENT PLATFORMS AND SORT INPUTS START-->
+            <div class="col-md-10">
+                <h1 class="display-4">GAMES</h1>
+                <div class="row mt-4">
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <select class="form-select" id="platformSelect" onchange="filterByPlatform(this.value)">
+                                <option selected>Platforms</option>
+                                <option value="1">PC</option>
+                                <option value="2">PlayStation</option>
+                                <option value="3">Xbox</option>
+                                <option value="4">iOS</option>
+                                <option value="5">Android</option>
+                                <option value="6">Apple Macintosh</option>
+                                <option value="7">Linux</option>
+                                <option value="8">Nintendo</option>
+                                <option value="9">Atari</option>
+                                <option value="10">Commodore / Amiga</option>
+                                <option value="11">SEGA</option>
+                                <option value="12">3DO</option>
+                                <option value="13">Neo Geo</option>
+                                <option value="14">Web</option>
+                            </select>
+                            <button class="btn btn-outline-secondary" type="button"></button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group mb-3">
+                            <select class="form-select" id="sortingSelect" onchange="sortByCriteria(this.value)">
+                                <option selected>Sort By</option>
+                                <option value="1">Relevance</option>
+                                <option value="2">Date added</option>
+                                <option value="3">Name</option>
+                                <option value="4">Release date</option>
+                                <option value="5">Popularity</option>
+                                <option value="6">Average rating</option>
+                            </select>
+                            <button class="btn btn-outline-secondary" type="button"></button>
+                        </div>
+                    </div>
+                </div>
+            <!-- MAIN CONTENT PLATFORMS AND SORT INPUTS START-->
+
+                
+                
+                <!-- MAIN CONTENT START -->
+                <div class="col-md-10">
+                    <div class="row mt-4" id="gameList">
+                        <!-- Game lists-->
+                    </div>
+                </div>
+                <!-- MAIN CONTENT END -->
+
+                
+            </div>
+        </div>
+    </div>
+    
+    
+    <script src="script.js"></script>
+</body>
+</html>
+
+
